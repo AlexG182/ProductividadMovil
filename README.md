@@ -1,24 +1,31 @@
 # 📱 Ivy Lee Weekly Planner - Versión Móvil
 
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://alexg182.github.io/ProductividadMovil/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Mobile Optimized](https://img.shields.io/badge/mobile-optimized-brightgreen.svg)](https://alexg182.github.io/ProductividadMovil/)
+
 ## 🎯 Descripción
 
-Esta es la **versión optimizada para dispositivos móviles** del Ivy Lee Weekly Planner, diseñada específicamente para funcionar perfectamente en **iPhone y Android**.
+**Versión optimizada para dispositivos móviles** del Ivy Lee Weekly Planner, diseñada específicamente para funcionar perfectamente en **iPhone y Android**.
+
+### 🌐 Demo en Vivo
+👉 **[Abrir App Móvil](https://alexg182.github.io/ProductividadMovil/)**
 
 ## ✨ Características Móviles
 
 ### 🎨 Diseño Adaptativo
-- **Interfaz touch-friendly** con botones de mínimo 44px para fácil toque
-- **Navegación por carrusel** para deslizar entre días de la semana
-- **Gestos táctiles** - desliza izquierda/derecha para cambiar de día
-- **Menú hamburguesa** para acciones principales
-- **Secciones colapsables** para ahorrar espacio en pantalla
+- ✅ **Interfaz touch-friendly** con botones de mínimo 44px para fácil toque
+- ✅ **Navegación por carrusel** para deslizar entre días de la semana
+- ✅ **Gestos táctiles** - desliza izquierda/derecha para cambiar de día
+- ✅ **Menú hamburguesa** para acciones principales
+- ✅ **Secciones colapsables** para ahorrar espacio en pantalla
 
 ### 📱 Optimizaciones Específicas
-- **Viewport optimizado** para prevenir zoom no deseado
-- **Safe area support** para iPhone con notch
-- **Modo PWA ready** - puede instalarse como app
-- **Diseño vertical** optimizado para uso con una mano
-- **Animaciones suaves** con aceleración por hardware
+- ✅ **Viewport optimizado** para prevenir zoom no deseado
+- ✅ **Safe area support** para iPhone con notch
+- ✅ **Modo PWA ready** - puede instalarse como app
+- ✅ **Diseño vertical** optimizado para uso con una mano
+- ✅ **Animaciones suaves** con aceleración por hardware
 
 ### 🎯 Funcionalidades Completas
 - ✅ Todas las funciones del Método Ivy Lee
@@ -31,33 +38,21 @@ Esta es la **versión optimizada para dispositivos móviles** del Ivy Lee Weekly
 
 ## 🚀 Cómo Usar
 
-### Opción 1: Abrir Directamente
-1. Abre `index-mobile.html` en tu navegador móvil
+### Opción 1: Usar en Línea (Recomendado)
+1. Abre [https://alexg182.github.io/ProductividadMovil/](https://alexg182.github.io/ProductividadMovil/) en tu móvil
 2. ¡Listo! La aplicación está optimizada automáticamente
 
-### Opción 2: Servidor Local
-```bash
-# Usando Python 3
-python -m http.server 8000
-
-# Usando Node.js
-npx http-server -p 8000
-```
-Luego abre en tu móvil: `http://[tu-ip-local]:8000/index-mobile.html`
-
-### Opción 3: Instalar como PWA (Próximamente)
+### Opción 2: Instalar como PWA
 1. Abre la app en Safari (iOS) o Chrome (Android)
-2. Toca "Agregar a pantalla de inicio"
-3. Usa como app nativa
+2. Toca el menú del navegador
+3. Selecciona "Agregar a pantalla de inicio"
+4. Usa como app nativa
 
-## 📂 Archivos de la Versión Móvil
-
-```
-IvyLeeWeeklyPlanner/
-├── index-mobile.html       # HTML optimizado para móvil
-├── styles-mobile.css       # CSS con diseño responsive
-├── script-mobile.js        # JavaScript con gestos táctiles
-└── README-MOBILE.md        # Este archivo
+### Opción 3: Clonar y Ejecutar Localmente
+```bash
+git clone https://github.com/AlexG182/ProductividadMovil.git
+cd ProductividadMovil
+# Abrir index.html en tu navegador
 ```
 
 ## 🎮 Controles Móviles
@@ -112,16 +107,15 @@ IvyLeeWeeklyPlanner/
 - ✅ Samsung Internet
 - ✅ Edge
 
-## 🔧 Diferencias con Versión Desktop
+## 🔧 Estructura del Proyecto
 
-| Característica | Desktop | Móvil |
-|---------------|---------|-------|
-| Vista de días | Grid 7 columnas | Carrusel 1 día |
-| Navegación | Scroll vertical | Swipe horizontal |
-| Menú | Siempre visible | Hamburguesa |
-| Explicación | Siempre expandida | Colapsable |
-| Botones | Hover effects | Touch feedback |
-| Tamaño mínimo | 44px | 48px |
+```
+ProductividadMovil/
+├── index.html          # HTML optimizado para móvil
+├── styles.css          # CSS con diseño responsive
+├── script.js           # JavaScript con gestos táctiles
+└── README.md           # Este archivo
+```
 
 ## 💡 Consejos de Uso
 
@@ -140,8 +134,9 @@ IvyLeeWeeklyPlanner/
 ## 🐛 Solución de Problemas
 
 ### La app no carga
-- Verifica que todos los archivos estén en la misma carpeta
-- Asegúrate de abrir `index-mobile.html` (no `index.html`)
+- Verifica tu conexión a internet
+- Limpia la caché del navegador
+- Actualiza el navegador a la última versión
 
 ### Los gestos no funcionan
 - Asegúrate de deslizar sobre el área de la tarjeta del día
@@ -150,20 +145,6 @@ IvyLeeWeeklyPlanner/
 ### Los datos no se guardan
 - Verifica que el navegador permita localStorage
 - No uses modo incógnito/privado
-
-### Problemas de visualización
-- Actualiza el navegador a la última versión
-- Limpia la caché del navegador
-
-## 🔄 Sincronización con Versión Desktop
-
-Ambas versiones (desktop y móvil) usan el **mismo localStorage**, por lo que:
-
-- ✅ Los datos se comparten automáticamente
-- ✅ Puedes usar ambas versiones indistintamente
-- ✅ Los cambios se reflejan inmediatamente
-
-**Nota:** Esto solo funciona en el mismo navegador del mismo dispositivo.
 
 ## 📈 Próximas Mejoras
 
@@ -174,33 +155,47 @@ Ambas versiones (desktop y móvil) usan el **mismo localStorage**, por lo que:
 - [ ] Widgets para pantalla de inicio
 - [ ] Integración con calendario
 
-## 📝 Notas Técnicas
-
-### Performance
-- **Lazy loading** de imágenes
-- **Hardware acceleration** para animaciones
-- **Touch events pasivos** para mejor scroll
-- **Debouncing** en inputs
-
-### Accesibilidad
-- **Tamaños táctiles** mínimos de 44px
-- **Contraste** WCAG AA compliant
-- **Feedback visual** en todas las interacciones
-
 ## 🤝 Contribuir
 
-Si encuentras algún problema o tienes sugerencias para mejorar la versión móvil, por favor:
+Si encuentras algún problema o tienes sugerencias:
 
-1. Documenta el problema con capturas de pantalla
-2. Incluye modelo de dispositivo y versión de OS
-3. Describe los pasos para reproducir
+1. Abre un [Issue](https://github.com/AlexG182/ProductividadMovil/issues)
+2. Incluye capturas de pantalla si es posible
+3. Describe los pasos para reproducir el problema
 
 ## 📄 Licencia
 
-Mismo que la versión desktop del Ivy Lee Weekly Planner.
+Este proyecto está bajo la Licencia MIT.
+
+## 👨‍💻 Autor
+
+**AlexG182**
+- GitHub: [@AlexG182](https://github.com/AlexG182)
+- Email: 1jramirez182@gmail.com
 
 ---
 
 **¡Disfruta de tu productividad móvil con el Método Ivy Lee! 🚀**
 
 *"Do the most important thing first each day and you'll accomplish more than most people do in a week."*
+
+---
+
+### 📱 Capturas de Pantalla
+
+_Próximamente: Capturas de pantalla de la interfaz móvil_
+
+### 🌟 Características Destacadas
+
+- **Método Ivy Lee**: Enfoque en las 6 tareas más importantes del día
+- **Priorización**: Sistema de ordenamiento por importancia
+- **Seguimiento**: Estadísticas semanales de progreso
+- **Brian Tracy**: Integración del método "Tráguese ese Sapo"
+- **Regla 80/20**: Identifica las tareas de alto impacto
+- **ABCDE**: Sistema de clasificación de tareas
+
+### 🔗 Enlaces Útiles
+
+- [Demo en Vivo](https://alexg182.github.io/ProductividadMovil/)
+- [Repositorio](https://github.com/AlexG182/ProductividadMovil)
+- [Reportar un Bug](https://github.com/AlexG182/ProductividadMovil/issues)
