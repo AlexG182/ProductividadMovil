@@ -170,7 +170,8 @@ function renderCurrentDay() {
     date.setDate(state.currentWeekStart.getDate() + state.currentDayIndex);
     const dateKey = getDateKey(date);
 
-    const dayCard = document.querySelector('.day-card');
+    // Select the specific day card based on current index
+    const dayCard = document.querySelector(`.day-card[data-index="${state.currentDayIndex}"]`);
     if (!dayCard) return;
 
     const dayData = state.weeklyData[dateKey] || { tasks: [] };
@@ -268,7 +269,8 @@ function createTaskElement(task, dateKey, index, totalTasks) {
 }
 
 function updateDayProgress(dateKey) {
-    const dayCard = document.querySelector('.day-card');
+    // Select the specific day card by date key
+    const dayCard = document.querySelector(`.day-card[data-date="${dateKey}"]`);
     if (!dayCard) return;
 
     const dayData = state.weeklyData[dateKey] || { tasks: [] };
@@ -409,6 +411,9 @@ function renderWeek() {
 
     carousel.appendChild(carouselInner);
 
+    // Render tasks for all days
+    renderAllDays();
+
     // Set initial day to today
     state.currentDayIndex = todayIndex;
     goToDay(todayIndex);
@@ -417,6 +422,49 @@ function renderWeek() {
     setupTouchEvents();
 
     updateStatistics();
+}
+
+// ========================================
+// Render All Days' Tasks
+// ========================================
+
+function renderAllDays() {
+    for (let i = 0; i < 7; i++) {
+        const date = new Date(state.currentWeekStart);
+        date.setDate(state.currentWeekStart.getDate() + i);
+        const dateKey = getDateKey(date);
+
+        const dayCard = document.querySelector(`.day-card[data-index="${i}"]`);
+        if (!dayCard) continue;
+
+        const dayData = state.weeklyData[dateKey] || { tasks: [] };
+        const tasksList = dayCard.querySelector('.tasks-list');
+
+        // Clear existing tasks
+        tasksList.innerHTML = '';
+
+        if (dayData.tasks.length === 0) {
+            tasksList.innerHTML = `
+                <div class="empty-state">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="9" y1="9" x2="15" y2="9"/>
+                        <line x1="9" y1="13" x2="15" y2="13"/>
+                        <line x1="9" y1="17" x2="13" y2="17"/>
+                    </svg>
+                    <p>No hay tareas programadas</p>
+                    <p style="font-size: 0.75rem;">Agrega hasta 6 tareas para este día</p>
+                </div>
+            `;
+        } else {
+            dayData.tasks.forEach((task, index) => {
+                const taskItem = createTaskElement(task, dateKey, index, dayData.tasks.length);
+                tasksList.appendChild(taskItem);
+            });
+        }
+
+        updateDayProgress(dateKey);
+    }
 }
 
 // ========================================
