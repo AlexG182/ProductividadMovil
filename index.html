@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0a0a0f">
+    <title>Ivy Lee Method - Weekly Planner</title>
+    <meta name="description"
+        content="Planifica tu semana de forma productiva usando el Método Ivy Lee - Prioriza y conquista tus objetivos">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="background-gradient"></div>
+
+    <!-- Mobile Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" />
+                            <path d="M16 16L22 12V20L16 24L10 20V12L16 16Z" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1>Ivy Lee Method</h1>
+                        <p class="subtitle">Masterclass in Prioritization</p>
+                    </div>
+                </div>
+                <button class="btn-icon menu-toggle" id="menuToggle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <button class="btn btn-accent btn-block" id="eatFrogBtnMobile">
+                🐸 Tráguese ese Sapo
+            </button>
+            <button class="btn btn-secondary btn-block" id="clearAllBtnMobile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                </svg>
+                Limpiar Todo
+            </button>
+            <button class="btn btn-primary btn-block" id="exportBtnMobile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </svg>
+                Exportar Plan
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Method Explanation (Collapsible on Mobile) -->
+            <section class="method-explanation">
+                <button class="explanation-toggle" id="explanationToggle">
+                    <span>🎯 Cómo Funciona el Método Ivy Lee</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div class="explanation-card" id="explanationCard">
+                    <div class="card-body">
+                        <div class="method-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Selecciona 6 Tareas</h3>
+                                    <p>Al final de cada día, escribe las 6 tareas más importantes para mañana. No más de
+                                        6.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Prioriza por Importancia</h3>
+                                    <p>Ordena las tareas según su importancia real, no por urgencia o facilidad.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Enfoque Total</h3>
+                                    <p>Trabaja en la primera tarea hasta completarla. Solo entonces, pasa a la
+                                        siguiente.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Repite el Proceso</h3>
+                                    <p>Tareas incompletas se mueven al día siguiente. Mantén el límite de 6 tareas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Week Navigation -->
+            <section class="week-navigation">
+                <div class="week-selector">
+                    <button class="btn-icon" id="prevWeekBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <span class="current-week" id="currentWeek">Semana del 16 - 22 Feb 2026</span>
+                    <button class="btn-icon" id="nextWeekBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Days Carousel (Mobile View) -->
+            <section class="days-carousel" id="daysCarousel">
+                <!-- Days will be generated by JavaScript -->
+            </section>
+
+            <!-- Day Navigation Dots -->
+            <div class="day-dots" id="dayDots">
+                <!-- Dots will be generated by JavaScript -->
+            </div>
+
+            <!-- Statistics Dashboard -->
+            <section class="statistics-section">
+                <h2>📊 Tu Progreso Semanal</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="completedTasks">0</div>
+                            <div class="stat-label">Completadas</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="totalTasks">0</div>
+                            <div class="stat-label">Total</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="completionRate">0%</div>
+                            <div class="stat-label">Cumplimiento</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="currentStreak">0</div>
+                            <div class="stat-label">Racha</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Método Ivy Lee - Creado por Charles M. Schwab's productivity consultant en 1918</p>
+            <p class="footer-quote">"Do the most important thing first each day and you'll accomplish more than most
+                people do in a week."</p>
+        </div>
+    </footer>
+
+    <!-- Eat That Frog Modal -->
+    <div class="modal" id="eatFrogModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>🐸 Tráguese ese Sapo</h2>
+                <button class="modal-close" id="closeModal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="frog-intro">
+                    <div class="frog-icon">🐸</div>
+                    <div class="frog-quote">
+                        <p>"Si lo primero que haces cada mañana es comerte un sapo vivo, tendrás la satisfacción de
+                            saber que probablemente esa será la peor cosa que harás en todo el día."</p>
+                        <cite>- Mark Twain</cite>
+                    </div>
+                </div>
+
+                <div class="methodology-tabs">
+                    <button class="tab-btn active" data-tab="abcde">ABCDE</button>
+                    <button class="tab-btn" data-tab="pareto">80/20</button>
+                    <button class="tab-btn" data-tab="frog">Tu Sapo 🐸</button>
+                    <button class="tab-btn" data-tab="methods">21 Métodos</button>
+                </div>
+
+                <div class="tab-content active" id="abcde-tab">
+                    <h3>📋 Método ABCDE</h3>
+                    <p class="tab-description">Clasifica tus tareas según su importancia:</p>
+
+                    <div class="abcde-grid">
+                        <div class="abcde-card priority-a">
+                            <div class="abcde-letter">A</div>
+                            <div class="abcde-content">
+                                <h4>MUY IMPORTANTE</h4>
+                                <p>Tareas críticas que DEBES hacer. Consecuencias graves si no las completas.</p>
+                            </div>
+                        </div>
+                        <div class="abcde-card priority-b">
+                            <div class="abcde-letter">B</div>
+                            <div class="abcde-content">
+                                <h4>IMPORTANTE</h4>
+                                <p>Tareas que DEBERÍAS hacer. Consecuencias moderadas.</p>
+                            </div>
+                        </div>
+                        <div class="abcde-card priority-c">
+                            <div class="abcde-letter">C</div>
+                            <div class="abcde-content">
+                                <h4>SERÍA BUENO</h4>
+                                <p>Tareas agradables pero sin consecuencias.</p>
+                            </div>
+                        </div>
+                        <div class="abcde-card priority-d">
+                            <div class="abcde-letter">D</div>
+                            <div class="abcde-content">
+                                <h4>DELEGAR</h4>
+                                <p>Tareas que otra persona puede hacer.</p>
+                            </div>
+                        </div>
+                        <div class="abcde-card priority-e">
+                            <div class="abcde-letter">E</div>
+                            <div class="abcde-content">
+                                <h4>ELIMINAR</h4>
+                                <p>Tareas innecesarias que solo roban tiempo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="golden-rule">
+                        <strong>⭐ Regla de Oro:</strong> Nunca hagas una tarea "B" cuando tengas una "A" pendiente.
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="applyABCDE">Aplicar Método ABCDE</button>
+                </div>
+
+                <div class="tab-content" id="pareto-tab">
+                    <h3>📊 Regla 80/20</h3>
+                    <p class="tab-description">El 20% de tus actividades produce el 80% de tus resultados.</p>
+
+                    <div class="pareto-visual">
+                        <div class="pareto-chart">
+                            <div class="pareto-bar high-impact">
+                                <div class="bar-label">20% Tareas</div>
+                                <div class="bar-value">80% Resultados</div>
+                            </div>
+                            <div class="pareto-bar low-impact">
+                                <div class="bar-label">80% Tareas</div>
+                                <div class="bar-value">20% Resultados</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pareto-tips">
+                        <h4>💡 Cómo Aplicar:</h4>
+                        <ul>
+                            <li><strong>Identifica el 20%:</strong> ¿Cuáles 1-2 tareas generarán el 80% de los
+                                resultados?</li>
+                            <li><strong>Enfócate ahí:</strong> Dedica tu mejor tiempo y energía a ese 20% crítico</li>
+                            <li><strong>Minimiza el 80%:</strong> Reduce, delega o elimina el resto</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" id="identifyHighImpact">Identificar Tareas de Alto
+                        Impacto</button>
+                </div>
+
+                <div class="tab-content" id="frog-tab">
+                    <h3>🐸 Identifica tu Sapo</h3>
+                    <p class="tab-description">Tu "sapo" es la tarea más grande e importante que más tiendes a
+                        procrastinar.</p>
+
+                    <div class="frog-finder">
+                        <h4>¿Cuál es tu SAPO hoy?</h4>
+                        <p>Selecciona tu tarea más importante:</p>
+                        <div id="todayFrogSelector" class="frog-task-list">
+                            <!-- Tasks will be loaded here dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="frog-principles">
+                        <h4>🎯 Principios del "Sapo":</h4>
+                        <div class="principle-grid">
+                            <div class="principle-card">
+                                <div class="principle-icon">1️⃣</div>
+                                <div class="principle-text">
+                                    <strong>Hazlo PRIMERO</strong>
+                                    <p>Come tu sapo a primera hora</p>
+                                </div>
+                            </div>
+                            <div class="principle-card">
+                                <div class="principle-icon">2️⃣</div>
+                                <div class="principle-text">
+                                    <strong>Si hay DOS sapos</strong>
+                                    <p>Come el más grande primero</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="methods-tab">
+                    <h3>📚 Los 21 Métodos</h3>
+                    <p class="tab-description">Estrategias de Brian Tracy:</p>
+
+                    <div class="methods-list">
+                        <div class="method-item">
+                            <div class="method-number">1</div>
+                            <div class="method-content">
+                                <h4>Ponga la Mesa</h4>
+                                <p>Decida exactamente qué quiere lograr.</p>
+                            </div>
+                        </div>
+                        <div class="method-item">
+                            <div class="method-number">2</div>
+                            <div class="method-content">
+                                <h4>Planifique con Antelación</h4>
+                                <p>Cada minuto de planificación ahorra 10 de ejecución.</p>
+                            </div>
+                        </div>
+                        <div class="method-item">
+                            <div class="method-number">3</div>
+                            <div class="method-content">
+                                <h4>Aplique la Regla 80/20</h4>
+                                <p>El 20% de actividades produce el 80% de resultados.</p>
+                            </div>
+                        </div>
+                        <!-- Add more methods as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
