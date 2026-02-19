@@ -104,8 +104,15 @@ body {
 }
 
 @keyframes gradientShift {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 /* ========================================
@@ -842,6 +849,7 @@ body {
         opacity: 0;
         transform: translateY(100%);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -855,6 +863,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .modal-header h2 {
@@ -875,13 +884,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .modal-body {
     padding: var(--spacing-md);
     overflow-y: auto;
+    overflow-x: hidden;
     flex: 1;
+    min-height: 0;
+    /* Critical for flex scroll to work */
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Frog Intro */
@@ -1255,6 +1269,7 @@ body {
    Safe Area Support (iOS)
    ======================================== */
 @supports (padding: max(0px)) {
+
     .header,
     .footer,
     .container {
